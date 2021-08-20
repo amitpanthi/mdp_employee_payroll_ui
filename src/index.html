@@ -87,9 +87,10 @@
                 </div>
                 <div class="salary-input input-div">
                     <label for="salary-ip" class="ip-label">Salary</label>
-                    <select id="salary-ip" class="salary-ip ip">
-                        <option>Select a salary</option>
-                    </select>
+                    <div class="slider-div">
+                        <input type="range" min="350000" max="5000000" value="500000" step="50000" class="salary-slider" id="salary-slider">
+                        <p class="slider-output" id="slider-output"></p>
+                    </div>
                 </div>
                 <!-- UC5 -->
                 <div class="date-input input-div">
@@ -127,5 +128,6 @@
             </div>
         </div>
     </div>
+    <script src="../js/sliderOutput.js"></script>
 </body>
 </html>
