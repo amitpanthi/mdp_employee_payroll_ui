@@ -1,5 +1,6 @@
 class EmployeePayroll{
     constructor(...params){
+        this.validateRegex(params)
         this.name = params[0]
         this.pic = params[1]
         this.gender = params[2]
@@ -12,22 +13,43 @@ class EmployeePayroll{
 
     validateRegex(params){
         //checking username
-        var uname_rgx = /^([A-Z])([\w]){1}([\w])+$/
-        let name = params[1]
+        var uname_rgx = /^([A-Z])([A-Za-z ]){2,}$/
+        let name = params[0]
 
         let name_bool = uname_rgx.test(name)
-
-        var gender_rgx = /^[MF]$/
-        let gender = params[3]
-
-        let gender_bool = gender_rgx.test(gender)
+        let inputBox = document.getElementById("name-ip")
 
         if(name_bool == false){
-            throw("Invalid Name!")
+            inputBox.className = "name-ip ip error"
+        } else {
+            inputBox.className = "name-ip ip"
         }
 
-        if(gender_bool == false){
-            throw("Invalid Gender!")
+        //checking date
+        let day = params[4]
+        let month = params[5]
+        let year = params[6]
+
+        console.log(year, month, day)
+        let inputDate = new Date(year, month, day)
+        console.log(inputDate)
+        let inputDateInMs = inputDate.getTime()
+
+        const timeElapsed = Date.now()
+        let numDaysPassed = (timeElapsed - inputDateInMs)/(1000 * 60 * 60 * 24) //getting number of days passed since input date
+        
+        let yearInputBox = document.getElementById("year-ip")
+        let monthInputBox = document.getElementById("month-ip")
+        let dateInputBox = document.getElementById("day-ip")
+
+        if(numDaysPassed <= 30){
+            dateInputBox.className = "day-ip ip error"
+            monthInputBox.className = "month-ip ip error"
+            yearInputBox.className = "year-ip ip error"
+        } else {
+            dateInputBox.className = "day-ip ip"
+            monthInputBox.className = "month-ip ip"
+            yearInputBox.className = "year-ip ip"
         }
     }
 
@@ -75,6 +97,11 @@ function showDetails(){
     let year = document.getElementById("year-ip")
     let notes = document.getElementById("notes-ip")
 
-    let newEmployee = new EmployeePayroll(name.value, pic.value, gender.value, salary.value, day.value, month.value, year.value, notes.value)
-    newEmployee.showDetails()
+    try{
+        let newEmployee = new EmployeePayroll(name.value, pic.value, gender.value, salary.value, day.value, month.value, year.value, notes.value)
+        newEmployee.showDetails()
+    } catch(err) {
+        errorBox = document.getElementById("error-text")
+        errorBox.innerHTML = "Please enter all inputs"
+    }
 }
