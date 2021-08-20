@@ -8,8 +8,8 @@ body, html{
 .main-content-wrapper{
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .header{
@@ -179,4 +179,32 @@ button{
 
 .submit-button, .reset-button{
     margin-right: 11.8%;
+}
+
+@media screen and (max-width: 760px){
+    .cancel-button{
+        width: 70%;
+    }
+
+    .submit-button, .reset-button{
+        width: 90%;
+    }
+
+    .payroll-form{
+        width: 100%;
+        height: 100%;
+    }
+
+    .date-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .notes-ip{
+        padding:0
+    }
+
+    .department-div{
+        flex:2
+    }
 }
