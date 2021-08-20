@@ -12,12 +12,20 @@ body, html{
     width: 100%;
 }
 
-.header-logo{
+.header{
     flex: 1;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.header-logo{
     background-color: #FFFFFF;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 0.2fr;
+    width: 80%;
+    height:80%
 }
 
 .content{
@@ -50,13 +58,16 @@ body, html{
 
 h1{
     margin: 0;
+    line-height: 1.2rem;
 }
 
 .logo{
-    width: 50%;
-    height: 100%;
     align-self: center;
     justify-self: end;
+}
+
+span{
+    font-size: 1.5rem;
 }
 
 .input-div{
