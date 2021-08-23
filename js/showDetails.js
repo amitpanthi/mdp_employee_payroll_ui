@@ -99,6 +99,7 @@ function showDetails(){
 
     try{
         let newEmployee = new EmployeePayroll(name.value, pic.value, gender.value, salary.value, day.value, month.value, year.value, notes.value)
+        console.log(newEmployee)
         newEmployee.showDetails()
     } catch(err) {
         errorBox = document.getElementById("error-text")

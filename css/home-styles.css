@@ -127,6 +127,7 @@ span{
 }
 
 .employee-table-wrapper{
+    height: 100%;
     justify-self: center;
     width: 70%;
     display: flex;
