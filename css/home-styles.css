@@ -10,15 +10,16 @@ body, html{
 .main-content-wrapper{
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: 100vw;
 }
 
 .header{
-    flex: 1;
+    flex: 1 0 0;
     display:flex;
     justify-content: flex-start;
     align-items: flex-end;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .header-logo{
@@ -27,11 +28,12 @@ body, html{
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 0.2fr;
     width: 80%;
-    height:80%
+    height:80%;
+    margin-left: 9%;
 }
 
 .content{
-    flex: 9;
+    flex: 9 0 0;
     display: flex;
     flex-direction: column;
     background-color: #F7F7F7;
@@ -66,15 +68,17 @@ span{
 .content-header{
     flex: 1;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 1%;
     padding-top: 1%;
-
+    width: 70%;
+    align-self: center;
 }
 
 .employee-table{
     flex: 9;
+    overflow: auto;
 }
 
 .header-str{
@@ -97,6 +101,7 @@ span{
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 20%;
+    margin-right: 6.5%;
 }
 
 .search{
@@ -118,6 +123,7 @@ span{
     justify-self: center;
     display: flex;
     justify-content: center;
+    overflow: auto;
 }
 
 .employee-table-wrapper{
@@ -128,15 +134,30 @@ span{
 }
 
 .table-heading-row{
+    height: 10%;
     background-color: #42515F;
     border-radius: 3px 3px 0px 0px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-items: center;
+    grid-template-columns: 0.5fr repeat(6, 1fr);
+    justify-items: left;
 }
 
 .table-heading{
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     color: white;
+    /* padding-left: 7%; */
+}
+
+.table-content{
+    height: 10%;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(6, 1fr);
+    justify-items: left;
+    margin: 0%;
+    border: 1px solid #E3E3E3;
+}
+
+.profile-pic{
+    padding-top: 7%
 }
