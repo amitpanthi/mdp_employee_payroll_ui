@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body onload=checkUpdates()>
     <div class="main-content-wrapper">
         <div class="header">
             <!-- UC1 -->
@@ -19,30 +19,30 @@
         <div class="content">
             <div class="payroll-form">
                 <h3>Employee Payroll Form</h3>
-                <p id="error-text" class="error-text"></p>
                 <!-- UC2 -->
                 <div class="name-input input-div">
                     <label for="name-ip" class="ip-label">Name</label>
                     <input type="text" id="name-ip" class="name-ip ip">
                 </div>
+                <p id="name-error-text" class="error-text"></p>
                 <!-- UC3 -->
                 <div class="dp-input input-div">
                     <label for="dp-ip" class="ip-label">Profile Image</label>
                     <div class="dp-div ip">
                         <div class="dp-element">
-                            <input type="radio" name="dp" id="dp1" value="dp1">
+                            <input type="radio" name="dp" id="dp1" value="../assets/dp/Ellipse -7.png">
                             <img src="../assets/dp/Ellipse -7.png" alt="DP1">
                         </div>
                         <div class="dp-element">
-                            <input type="radio" name="dp" id="dp2" value="dp2">
+                            <input type="radio" name="dp" id="dp2" value="../assets/dp/Ellipse -8.png">
                             <img src="../assets/dp/Ellipse -8.png" alt="DP2">
                         </div>
                         <div class="dp-element">
-                            <input type="radio" name="dp" id="dp3" value="dp3">
+                            <input type="radio" name="dp" id="dp3" value="../assets/dp/Ellipse -9.png">
                             <img src="../assets/dp/Ellipse -9.png" alt="DP3">
                         </div>
                         <div class="dp-element">
-                            <input type="radio" name="dp" id="dp4" value="dp4">
+                            <input type="radio" name="dp" id="dp4" value="../assets/dp/Ellipse -10.png">
                             <img src="../assets/dp/Ellipse -10.png" alt="DP4">
                         </div>
                     </div>
@@ -52,11 +52,11 @@
                     <label for="gender-ip" class="ip-label">Gender</label>
                     <div class="gender-div ip">
                         <div class="gender-element">
-                            <input type="radio" name="gender" id="male" value="male">
+                            <input type="radio" name="gender" id="male" value="Male">
                             <label for="male">Male</label>
                         </div>
                         <div class="gender-element">
-                            <input type="radio" name="gender" id="female" value="female">
+                            <input type="radio" name="gender" id="female" value="Female">
                             <label for="female">Female</label>
                         </div>
                     </div>
@@ -160,6 +160,7 @@
                         </div>
                     </div>
                 </div>
+                <p id="name-error-text" class="error-text"></p>
                 <!-- UC6 -->
                 <div class="notes-input input-div">
                     <label for="notes-ip" class="notes-label ip-label">Notes</label>
@@ -168,7 +169,7 @@
                 <div class="button-container">
                     <button type="cancel" class="cancel-button">Cancel</button>
                     <div class="inner-buttons">
-                        <button type="submit" onclick="showDetails()" class="submit-button">Submit</button>
+                        <button type="submit" onclick="submitForm()" class="submit-button">Submit</button>
                         <button type="reset" class="reset-button">Reset</button>
                     </div>
                 </div>
@@ -176,6 +177,6 @@
         </div>
     </div>
     <script src="../js/sliderOutput.js"></script>
-    <script src="../js/showDetails.js"></script>
+    <script src="../js/employee-payroll.js"></script>
 </body>
 </html>
