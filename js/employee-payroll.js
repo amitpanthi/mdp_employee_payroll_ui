@@ -91,6 +91,8 @@ function submitForm(){
     }
 
     localStorage.setItem("employeePayrollData", JSON.stringify(employeePayrollList))
+
+    window.location = "../src/home.html"
 }
 
 
@@ -160,10 +162,8 @@ function checkUpdates(){
         year.value = dateArray[2]
 
         notes.value = employeePayrollData.notes
-
-        console.log(idx)
-        console.log(employeePayrollList)
-        localStorage.setItem("employeePayrollData", JSON.stringify(employeePayrollList.splice(idx, 1)))
-        localStorage.setItem("updateNodeKey")
+        employeePayrollList.splice(idx, 1)
+        localStorage.setItem("employeePayrollData", JSON.stringify(employeePayrollList))
+        localStorage.setItem("updateNodeKey", undefined)
     }
 }
