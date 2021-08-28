@@ -1,0 +1,53 @@
+{
+  "employees": [
+    {
+      "name": "Person 1",
+      "gender": "Female",
+      "department": [
+        "HR",
+        "Finance"
+      ],
+      "salary": "500000",
+      "startDate": "21-01-2019",
+      "note": "",
+      "id": 1,
+      "profilePic": "../assets/dp/Ellipse -7.png"
+    },
+    {
+      "name": "Person 2",
+      "gender": "Male",
+      "department": [
+        "Finance"
+      ],
+      "salary": "600000",
+      "startDate": "21-01-2019",
+      "note": "",
+      "id": 2,
+      "profilePic": "../assets/dp/Ellipse -7.png"
+    },
+    {
+      "name": "Person 2",
+      "gender": "Male",
+      "department": [
+        "Finance"
+      ],
+      "salary": "600000",
+      "startDate": "21-01-2019",
+      "note": "",
+      "id": 3,
+      "profilePic": "../assets/dp/Ellipse -7.png"
+    },
+    {
+      "name": "Person 7",
+      "gender": "Male",
+      "department": [
+        "Engineering, HR, Finance"
+      ],
+      "salary": "600000",
+      "startDate": "21-01-2019",
+      "note": "",
+      "id": 5,
+      "profilePic": "../assets/dp/Ellipse -7.png"
+    }
+  ]
+}

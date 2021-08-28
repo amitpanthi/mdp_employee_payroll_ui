@@ -28,10 +28,9 @@ function updateHTML(){
         <p class="table-item">${data.data.date}</p>
         <p class="table-item"><span id=${data.id} onclick=updateNode(this) class="iconify trash" data-icon="bi:pencil-fill"></span> <span id=${data.id} onclick=deleteNode(this) class="iconify pencil" data-icon="ion:trash"></span></p>
     </div>`
-
+    });
 
     document.querySelector('#employee-table-div').innerHTML = innerHTMLContent
-    });
 }
 
 
@@ -78,7 +77,7 @@ function deleteNode(node){
     employeePayrollList.splice(idx, 1)
     localStorage.setItem("employeePayrollData", JSON.stringify(employeePayrollList))
     
-    location.reload()
+    updateHTML()
 }
 
 function updateNode(node){
