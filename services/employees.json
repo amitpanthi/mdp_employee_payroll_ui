@@ -1,53 +1,65 @@
 {
-    "employees": [
-      {
-        "name": "Bisleri",
-        "gender": "Male",
-        "department": [
-          "HR",
-          "Finance"
-        ],
-        "salary": "500000",
-        "startDate": "21-01-2019",
-        "note": "",
-        "id": 1,
-        "profilePic": "../assets/dp/Ellipse -7.png"
-      },
-      {
-        "name": "Aquafina",
-        "gender": "Male",
-        "department": [
-          "Finance"
-        ],
-        "salary": "600000",
-        "startDate": "21-01-2019",
-        "note": "",
-        "id": 2,
-        "profilePic": "../assets/dp/Ellipse -7.png"
-      },
-      {
-        "name": "Coca Cola",
-        "gender": "Male",
-        "department": [
-          "HR"
-        ],
-        "salary": "600000",
-        "startDate": "21-01-2019",
-        "note": "",
-        "id": 3,
-        "profilePic": "../assets/dp/Ellipse -7.png"
-      },
-      {
-        "name": "Pepsi",
-        "gender": "Male",
-        "department": [
-          "Engineering, HR, Finance"
-        ],
-        "salary": "600000",
-        "startDate": "21-01-2019",
-        "note": "",
-        "id": 5,
-        "profilePic": "../assets/dp/Ellipse -7.png"
-      }
-    ]
-  }
+  "employees": [
+    {
+      "name": "Coca Cola",
+      "gender": "Female",
+      "department": [
+        "HR"
+      ],
+      "salary": "3450000",
+      "startDate": "21-1-2019",
+      "note": "Note",
+      "profilePic": "../assets/dp/Ellipse -7.png",
+      "id": 3
+    },
+    {
+      "name": "Pepsi",
+      "gender": "Male",
+      "department": [
+        "Engineering, HR, Finance"
+      ],
+      "salary": "600000",
+      "startDate": "21-1-2019",
+      "note": "",
+      "id": 5,
+      "profilePic": "../assets/dp/Ellipse -7.png"
+    },
+    {
+      "name": "Amit Panthi",
+      "gender": "Male",
+      "department": [
+        "Finance"
+      ],
+      "salary": "3700000",
+      "startDate": "1-1-2021",
+      "note": "Note",
+      "profilePic": "../assets/dp/Ellipse -9.png",
+      "id": 6
+    },
+    {
+      "name": "Amit Panthi",
+      "gender": "Female",
+      "department": [
+        "Engineer",
+        "Others"
+      ],
+      "salary": "3850000",
+      "startDate": "1-1-2021",
+      "note": "Note",
+      "profilePic": "../assets/dp/Ellipse -10.png",
+      "id": 7
+    },
+    {
+      "name": "Amit Panthi",
+      "gender": "Male",
+      "department": [
+        "HR"
+      ],
+      "salary": "5000000",
+      "startDate": "1-1-2021",
+      "note": "Note",
+      "profilePic": "../assets/dp/Ellipse -8.png",
+      "id": 8
+    }
+  ]
+}
