@@ -1,9 +1,13 @@
 let baseURL = "http://localhost:3000/employees/"
+let userValues = []
+let users = {}
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("Page loaded successfully")
     updateHTML()
 })
+
+document.getElementById("search").addEventListener('keyup', getSearchValues)
 
 function makeAjaxRequest(methodType, url, async, data=null){
     return new Promise((resolve, reject) => {
@@ -32,13 +36,47 @@ function makeAjaxRequest(methodType, url, async, data=null){
 }
 
 function updateHTML(){
-    makeAjaxRequest("GET", baseURL, true).then((response) => setHTMLValues(response)).catch((err) => {console.log(err)})
+    makeAjaxRequest("GET", baseURL, true)
+    .then((response) => {
+        setUserList(response);
+        setHTMLValues(response);
+    })
+    .catch((err) => {console.log(err)})
+}
+
+function setUserList(responseText){
+    responseText.forEach((user) => {
+        userValues.push(user.name)
+    })
+
+    users = responseText
 }
 
 
+function getSearchValues(){
+    let search = document.getElementById("search")
+    let keyword = search.value.toLowerCase()
+
+    let filtered_users = userValues.filter(function(user){
+        user = user.toLowerCase();
+       return user.indexOf(keyword) > -1
+    })
+    
+    let fullyFilteredUsers = []
+
+    filtered_users.forEach((elem) => {
+        users.forEach((u) => {
+            if(u.name == elem){
+                fullyFilteredUsers.push(u)
+            }
+        })
+    })
+
+    setHTMLValues(fullyFilteredUsers)
+}
+
 function setHTMLValues(empData){
-    console.log(empData)
-    let headerHTML = `<div class="table-heading-row">
+    var headerHTML = `<div class="table-heading-row">
         <p class="table-heading"></p>
         <p class="table-heading">NAME</p>
         <p class="table-heading">GENDER</p>
@@ -48,7 +86,7 @@ function setHTMLValues(empData){
         <p class="table-heading">ACTIONS</p>
         </div>`
 
-    let innerHTMLContent = `${headerHTML}`
+    var innerHTMLContent = `${headerHTML}`
 
     empData.forEach((data) => {
         innerHTMLContent = `${innerHTMLContent}

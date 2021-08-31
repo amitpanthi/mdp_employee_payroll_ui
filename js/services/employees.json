@@ -35,31 +35,6 @@
       "note": "Note",
       "profilePic": "../assets/dp/Ellipse -9.png",
       "id": 6
-    },
-    {
-      "name": "Amit Panthi",
-      "gender": "Female",
-      "department": [
-        "Engineer",
-        "Others"
-      ],
-      "salary": "3850000",
-      "startDate": "1-1-2021",
-      "note": "Note",
-      "profilePic": "../assets/dp/Ellipse -10.png",
-      "id": 7
-    },
-    {
-      "name": "Amit Panthi",
-      "gender": "Male",
-      "department": [
-        "HR"
-      ],
-      "salary": "5000000",
-      "startDate": "1-1-2021",
-      "note": "Note",
-      "profilePic": "../assets/dp/Ellipse -8.png",
-      "id": 8
     }
   ],
   "credentials": [
