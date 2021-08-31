@@ -61,5 +61,13 @@
       "profilePic": "../assets/dp/Ellipse -8.png",
       "id": 8
     }
+  ],
+  "credentials": [
+    {
+      "email": "amit@gmail.com",
+      "password": "Abcdefgh1!",
+      "mobile": "91 9123456789",
+      "id": 1
+    }
   ]
 }

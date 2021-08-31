@@ -103,18 +103,10 @@ span{
 
 .controls{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 10fr 2fr;
     grid-column-gap: 20%;
     margin-right: 6.5%;
-}
-
-.search{
-    box-shadow: 0px 1px 3px #00000029;
-    background-color: #FFFFFF;
-    border-radius: 28px;
-    border: 1px;
-    width: 3rem;
-    height: 2.5rem;
+    justify-items: end;
 }
 
 .iconify{
@@ -170,5 +162,25 @@ span{
 .pencil, .trash{
     width: 1.25rem;
     height: 1.25rem;
+    padding-right: 1rem;
+}
+
+
+.search{
+    box-shadow: 0px 1px 3px #00000029;
+    background-color: #FFFFFF;
+    border-radius: 28px;
+    border: 1px;
+    width: 3rem;
+    height: 2.5rem;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.search:focus{
+    width: 15rem;
+    justify-self: start;
+    cursor: auto;
+    padding-left: 1rem;
     padding-right: 1rem;
 }

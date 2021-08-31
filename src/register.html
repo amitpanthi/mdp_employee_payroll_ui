@@ -10,22 +10,24 @@
 <body>
     <div class="main-content-wrapper">
         <div class="login-box">
-            <h1>Employee Payroll Login</h1>
+            <h1>Employee Payroll Signup</h1>
+            <div class="input-grid">
+                <label for="email-ip">Email</label>
+                <input type="text" id="email-ip">
+                <small id="email-error"></small>
+            </div>
             <div class="input-grid">
                 <label for="mobile-ip">Mobile</label>
-                <input type="text" id="name-ip">
-                <div id="_s"></div>
+                <input type="text" id="mobile-ip">
                 <small id="mobile-error"></small>
             </div>
             <div class="input-grid">
-                <label for="name-ip">Password</label>
+                <label for="password-ip">Password</label>
                 <input type="password" id="password-ip">
-                <div id="_s"></div>
                 <small id="password-error"></small>
             </div>
-            <a href="../src/register.html">Sign up</a>
             <div class="buttons">
-                <button type="button" onclick="userLogin()">Login</button>
+                <button type="button" onclick="register()">Register</button>
                 <button type="button">Reset</button>
             </div>
         </div>
