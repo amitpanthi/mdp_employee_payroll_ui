@@ -1,10 +1,12 @@
 let baseURL = "http://localhost:3000/employees/"
+let baseCredQueryURL = "http://localhost:3000/credentials?"
 let userValues = []
 let users = {}
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("Page loaded successfully")
     updateHTML()
+    updateAdminNav()
 })
 
 document.getElementById("search").addEventListener('keyup', getSearchValues)
@@ -45,11 +47,13 @@ function updateHTML(){
 }
 
 function setUserList(responseText){
+    let employeeCount = document.getElementById("employee-count")
     responseText.forEach((user) => {
         userValues.push(user.name)
     })
 
     users = responseText
+    employeeCount.innerHTML = userValues.length
 }
 
 
@@ -112,4 +116,27 @@ function deleteNode(node){
 function updateNode(node){
     window.location = "../src/employee-payroll.html"
     localStorage.setItem("updateNodeKey", node.id)
+}
+
+function updateAdminNav(){
+    let mobile_num = localStorage.getItem("loggedInMobile")
+    
+
+    makeAjaxRequest("GET", baseCredQueryURL + `mobile=${mobile_num}`, true)
+    .then((response) => setAdminDetails(response[0]))
+    .catch((e) => console.log(e))
+}
+
+function setAdminDetails(responseText){
+    let mobile = document.getElementById("admin-mob")
+    let email = document.getElementById("admin-email")
+
+    console.log(responseText)
+    mobile.innerHTML = `Mobile: ${responseText.mobile}`
+    email.innerHTML = `Email: ${responseText.email}`
+}
+
+function logout(){
+    localStorage.removeItem("loggedInMobile")
+    window.location = "../src/admin-login.html"
 }

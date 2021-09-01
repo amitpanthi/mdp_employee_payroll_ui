@@ -12,14 +12,32 @@
     <div class="main-content-wrapper">
         <div class="header">
             <!-- UC1 -->
-            <div class="header-logo">
-                <img src="../assets/logo/logo.png" alt="Employee Payroll Logo" class="logo">
-                <h1><span class="emp">Employee</span><br> <span class="pay">Payroll</span></h1>
+            <div class="header-wrapper">
+                <div class="header-logo">
+                    <img src="../assets/logo/logo.png" alt="Employee Payroll Logo" class="logo">
+                    <h1><span class="emp">Employee</span><br> <span class="pay">Payroll</span></h1>
+                </div>
+                <div class="header-controls">
+                    <div class="admin-details">
+                        <img src="../assets/admin.png" alt="admin-dp" class="admin-logo">
+                        <div class="admin-det">
+                            <p id="admin-mob" class="admin-mob ad-det">Mobile</p>
+                            <p id="admin-email" class="admin-email ad-det">Email</p>
+                        </div>
+                    </div>
+                    <button type="button" class="logout-button" onclick="location.href=`../src/admin-login.html`" target="_blank">Logout</button>
+                </div>
             </div>
+        </div>
+        <div class="preloader" id="preloader">
+            <div class="spinner"></div>
         </div>
         <div class="content">
             <div class="content-header">
-                <h2 class="header-str">Employee Details</h2>
+                <div class="header-main-content">
+                    <h2 class="header-str">Employee Details</h2>
+                    <span id="employee-count" class="employee-count"></span>
+                </div>
                 <div class="controls">
                     <input type="search" id="search" class="search" placeholder="    &#x1F50E;&#xFE0E;">
                     <button type="button" class="add-user" onclick="location.href=`../src/employee-payroll.html`" target="_blank">Add User</button>

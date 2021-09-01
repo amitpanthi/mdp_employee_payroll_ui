@@ -33,7 +33,6 @@ function userLogin(){
     let password = document.getElementById("password-ip")
 
     if(checkMobile(mobile)){
-        console.log("valid")
         checkPasswordAndMobile(password, mobile)
     }
 }
@@ -94,7 +93,6 @@ function checkPassword(password){
 
 
 function checkPasswordAndMobile(password, mobile){
-    let responseMatch;
     const inputBox = password.parentElement
     const smallElement = inputBox.querySelector('small')
 
@@ -106,10 +104,10 @@ function checkPasswordAndMobile(password, mobile){
         } else {
             inputBox.className = 'input-grid success'
             smallElement.innerText = ''
+            localStorage.setItem("loggedInMobile", mobile.value)
+            window.location = '../src/home.html'
         }
     }).catch((e) => console.log(e))
-
-    return responseMatch
 }
 
 function register(){

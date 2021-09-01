@@ -1,48 +1,70 @@
 {
   "employees": [
     {
-      "name": "Coca Cola",
-      "gender": "Female",
+      "name": "Vinods",
+      "gender": "Male",
       "department": [
-        "HR"
+        "Sales"
       ],
-      "salary": "3450000",
-      "startDate": "21-1-2019",
-      "note": "Note",
-      "profilePic": "../assets/dp/Ellipse -7.png",
+      "salary": "350000",
+      "startDate": "21-1-2017",
+      "note": "undefined",
+      "profilePic": "../assets/dp/Ellipse -9.png",
       "id": 3
     },
     {
-      "name": "Pepsi",
+      "name": "John",
+      "email": "john@rocketmail.com",
+      "mobile": "91 9224582360",
       "gender": "Male",
       "department": [
-        "Engineering, HR, Finance"
+        "Engineering, HR"
       ],
       "salary": "600000",
       "startDate": "21-1-2019",
       "note": "",
       "id": 5,
-      "profilePic": "../assets/dp/Ellipse -7.png"
+      "profilePic": "../assets/dp/Ellipse -8.png"
     },
     {
       "name": "Amit Panthi",
       "gender": "Male",
       "department": [
-        "Finance"
+        "Finance",
+        "Engineer"
       ],
-      "salary": "3700000",
+      "salary": "5000000",
       "startDate": "1-1-2021",
-      "note": "Note",
+      "note": "undefined",
       "profilePic": "../assets/dp/Ellipse -9.png",
       "id": 6
+    },
+    {
+      "name": "Tess",
+      "gender": "Female",
+      "department": [
+        "HR",
+        "Sales"
+      ],
+      "salary": "2000000",
+      "startDate": "1-1-2016",
+      "note": "ASd",
+      "profilePic": "../assets/dp/Ellipse -7.png",
+      "id": 8
     }
   ],
   "credentials": [
     {
       "email": "amit@gmail.com",
       "password": "Abcdefgh1!",
-      "mobile": "91 9123456789",
+      "mobile": "91 9123456788",
       "id": 1
+    },
+    {
+      "email": "apanthi08@gmail.com",
+      "password": "Abcdefgh1!",
+      "mobile": "91 9123456789",
+      "id": 2
     }
   ]
 }

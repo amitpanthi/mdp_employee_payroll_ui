@@ -74,7 +74,7 @@ function makeAjaxRequest(methodType, url, async, data=null){
         xhr.onreadystatechange = function(){
             if(xhr.readyState == 4){
                 console.log("Started")
-                if(this.status == 200){
+                if(this.status == 200 || this.status == 201){
                     resolve(JSON.parse(this.responseText))
                 } else {
                     reject("Something went wrong")
@@ -122,13 +122,22 @@ function submitForm(){
         "profilePic": pic.value
     }
 
-    if(localStorage.getItem("updateNodeKey") != "undefined"){
+    if(localStorage.getItem("updateNodeKey") != "undefined" && localStorage.getItem("updateNodeKey") != "null" && localStorage.getItem("updateNodeKey") != null){
+        
         newEmp.id = localStorage.getItem("updateNodeKey")
-        makeAjaxRequest("PUT", baseURL + `${newEmp.id}`, true, newEmp).then((returnVal) => {console.log("Successfully updated")}).catch((err) => {console.log(err)})
-        localStorage.setItem("updateNodeKey", undefined)
-    } else {
-        makeAjaxRequest("POST", baseURL, true, newEmp).then((returnVal) => {console.log("Successfully added")}).catch((err) => {console.log(err)})
-    }
+        makeAjaxRequest("PUT", baseURL + `${newEmp.id}`, true, newEmp).then((returnVal) => {
+            console.log("Successfully updated"); 
+            localStorage.removeItem("updateNodeKey")
+            window.location = "../src/home.html"})
+            .catch((err) => {console.log(err)})
+        
+        return
+    } 
+
+    makeAjaxRequest("POST", baseURL, true, newEmp).then((returnVal) => {
+        console.log("Successfully added"); 
+        window.location = "../src/home.html"})
+        .catch((err) => {console.log(err)})
 }
 
 
@@ -190,4 +199,38 @@ function checkUpdates(){
         let updateKey = localStorage.getItem("updateNodeKey")
         makeAjaxRequest("GET", baseQueryURL + `id=${updateKey}`, true).then((employee) => {setVal(employee[0])}).catch((err) => {console.log(err)})
         }
+}
+
+function reset(){
+    let name = document.getElementById("name-ip")
+    let pic = document.getElementsByName('dp')
+    let gender = document.getElementsByName('gender')
+    let salary = document.getElementById("salary-slider")
+    let salaryVal = document.getElementById("slider-output")
+    let department = document.getElementsByName("dept")
+    let day = document.getElementById("day-ip")
+    let month = document.getElementById("month-ip")
+    let year = document.getElementById("year-ip")
+    let notes = document.getElementById("notes-ip")
+
+    name.value = ''
+    
+    pic.forEach((p) => {
+        p.checked = false
+    })
+
+    gender.forEach((g) => {
+        g.checked = false
+    })
+
+    salary.value = 500000
+    salaryVal.innerHTML = 500000
+    department.forEach((d) => {
+        d.checked = false
+    })
+
+    day.value = 1
+    month.value = 1
+    year.value = 2021
+    notes.value = ""
 }
